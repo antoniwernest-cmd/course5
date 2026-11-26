@@ -1,0 +1,367 @@
+/* The teacher's reading-test layout, with explicit in-page tools on small screens. */
+html:has(.test-shell),body:has(.test-shell){background:#edf2e7!important;color:#234d45!important}
+#app .test-shell{height:100dvh!important;width:100%;padding:12px 18px!important;display:flex!important;flex-direction:column;gap:8px!important;overflow:hidden;--test-font:22px;color:#234d45;background:#edf2e7!important}
+#app .test-shell *{box-sizing:border-box}
+#app .test-shell .topbar{min-height:55px;padding:0 0 8px!important;background:transparent!important;border-radius:0;border-bottom:1px solid #cdd8c7;box-shadow:none;flex:none}
+#app .test-shell .wordmark{color:#173e3d;max-width:45%;font-size:clamp(23px,2.3vw,34px);line-height:1.03}
+#app .test-shell .wordmark small{color:#617a72;font-size:10px;margin-bottom:5px;letter-spacing:.13em}
+#app .test-shell .top-info{gap:7px;flex-wrap:nowrap}
+#app .test-shell .badge{background:#fafff6;border:1px solid #b8cbb7;color:#315d50;padding:7px 10px;font-size:12px}
+#app .test-shell .activity-progress{padding:0 2px!important;gap:24px;flex:none}
+#app .test-shell .activity-progress-caption{font-size:11px;margin-bottom:4px;color:#385d4c}
+#app .test-shell .activity-progress-caption span,#app .test-shell .activity-progress-caption strong{color:#385d4c}
+#app .test-shell .activity-progress-rail{height:10px;background:#d7e0d0;box-shadow:none}
+#app .test-shell .activity-progress-vehicle{height:21px;width:33px}
+#app .test-shell .activity-progress-track{height:10px;background:#d7e0d0}
+#app .test-shell .activity-progress-track i{background:#87ab65}
+.test-tools{display:flex;align-items:center;gap:6px;flex:none}
+.test-tools button,.language-tabs button,.read-subtools button{font:700 13px/1.1 Arial,sans-serif;min-height:36px;padding:7px 13px;border:1px solid #becfb9;border-radius:9px;box-shadow:none;background:#f8fbf2;color:#315c4d}
+.test-tools button[aria-pressed="true"],.language-tabs button[aria-pressed="true"],.read-subtools button[aria-pressed="true"]{background:#244f46;color:#fff;border-color:#244f46}
+.test-tools{padding-right:0}
+#app .test-shell button:focus-visible,#app .test-shell select:focus-visible{outline:3px solid #c18c32;outline-offset:2px}
+#app .test-shell .test-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.test-card{min-width:0;min-height:0;overflow:hidden;border:1px solid #d0ddc9;border-radius:20px;background:#fffefa;padding:15px 17px;display:flex;flex-direction:column;gap:8px;color:#234d45}
+.test-card h1,.test-card h2{margin:0;color:#1d4841;line-height:1.1;font-family:Arial,sans-serif;letter-spacing:0;font-weight:750}
+.test-card h1{font-size:25px}
+.test-card h2{font-size:24px}
+.test-card p{margin:0}
+.test-card-head{display:flex;align-items:start;justify-content:space-between;gap:12px;flex:none}
+.test-card-head p,.picture-directions{color:#687d70;font-size:13px;line-height:1.3;margin-top:4px}
+.test-word-count{font-size:11px;line-height:1.4;color:#65795f;white-space:nowrap;text-align:right;padding-top:2px}
+.reading-card{grid-column:1;grid-row:1/3}
+.language-card{grid-column:2;grid-row:1}
+.picture-card{grid-column:2;grid-row:2}
+.full-story-picture{display:none}
+.independent-story{min-height:0;flex:1 1 auto;font:24px/1.37 Arial,sans-serif;overflow:visible;color:#183f3c}
+.independent-story p{margin:0 0 .5em}
+.grade-E .independent-story{font-size:29px;line-height:1.4}
+.grade-F .independent-story,.grade-G .independent-story{font-size:25px}
+.tick-questions{display:flex;flex-direction:column;gap:9px;flex:none;min-height:0}
+.tick-question{border:0;min-width:0;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;container-type:inline-size}
+.tick-question legend{font:700 16px/1.22 Arial,sans-serif;padding:0;margin-bottom:6px;width:100%}
+.tick-question-body{display:flex;align-items:stretch;gap:10px;min-height:0}
+.question-illustration{width:112px;height:76px;object-fit:cover;border-radius:9px;flex:none}
+.tick-options{flex:1;display:flex;gap:6px;align-items:stretch;min-width:0}
+.tick-option{display:flex;align-items:center;gap:7px;border:1px solid #d7dfc9;border-radius:9px;padding:6px 8px;flex:1;min-width:0;font:16px/1.2 Arial,sans-serif;cursor:pointer;background:#fffefa}
+.tick-option.chosen{border-color:#4e8069;background:#eef5e8;box-shadow:inset 0 0 0 1px #4e8069}
+.tick-option input{appearance:none;width:19px;height:19px;border:1.6px solid #819187;border-radius:4px;background:#fff;flex:none;margin:0;display:grid;place-content:center}
+.tick-option input:checked:after{content:'✓';font:900 17px/1 Arial,sans-serif;color:#244f46}
+.tick-option:has(input:disabled){cursor:default}
+.tick-option span{min-width:0;overflow-wrap:break-word}
+@container(max-width:650px){.tick-options{flex-direction:column}.tick-option{min-height:34px}}
+.tick-option input:focus-visible{outline:3px solid #c18c32;outline-offset:3px}
+.test-shell:is(.grade-E,.grade-F,.grade-G) .question-illustration{width:170px;height:120px}
+.test-shell:is(.grade-E,.grade-F,.grade-G) .tick-option{font-size:18px}
+.section-save{display:flex;gap:8px;align-items:center;justify-content:space-between;border-top:1px solid #e1e7d7;padding-top:8px;flex:none;margin-top:auto;min-height:43px}
+.section-save>span:first-child{font-size:11px;color:#6b806e;flex:1;line-height:1.25}
+#app .section-save button{font:700 14px/1.1 Arial,sans-serif;padding:10px 13px;min-height:38px;min-width:105px;border-radius:10px;box-shadow:none;background:#244f46;color:#fff;border:1px solid #244f46}
+#app .section-save button:disabled{opacity:.48}
+.section-lock{font-size:25px;display:inline-block;width:38px;text-align:center;flex:none}
+.spin-lock{animation:lock-turn 2.2s ease-in-out infinite}
+@keyframes lock-turn{0%,65%,100%{transform:rotateY(0deg)}25%{transform:rotateY(180deg)}}
+.language-illustration{width:67px;height:45px;object-fit:cover;border-radius:7px}
+.language-tabs{display:flex;gap:5px;flex:none}
+.language-tabs button{font-size:12px;min-height:30px;padding:6px 10px}
+.language-content{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.language-content[hidden]{display:none!important}
+.sentence-word-bank{display:flex;flex-wrap:wrap;justify-content:space-around;gap:4px;background:#eff2e2;padding:7px 8px;border-radius:8px;flex:none;font-size:16px;font-weight:700}
+.sentence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 12px;align-content:start;flex:1;min-height:0}
+.sentence-row{display:flex;gap:6px;font:17px/1.35 Arial,sans-serif;min-width:0;align-items:start}
+.sentence-row[hidden]{display:none!important}
+.sentence-part-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;flex:none}
+.sentence-part-tools button{min-height:34px;padding:6px 12px;font:700 13px Arial,sans-serif;border:1px solid #b9c9ae;background:#f4f7eb;color:#2d5847;border-radius:7px;box-shadow:none}
+.sentence-part-tools.activity-item-pager{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px;align-items:center;flex:none}
+.activity-item-pager>span{min-width:0;text-align:center;line-height:1.25;font-size:12px}
+.activity-item-pager strong,.activity-item-pager small{display:block}
+.activity-item-pager small{font-size:10px;color:#657b68;margin-top:2px}
+.sentence-part-tools.activity-item-pager button{font-size:12px;padding:6px 9px;white-space:nowrap}
+.sentence-number{font-size:13px;color:#849378;padding-top:8px}
+#app .test-shell select{font:16px/1.2 Arial,sans-serif;color:#234c43;max-width:100%;min-height:38px;padding:6px 24px 6px 8px;border:1px solid #adbea3;border-radius:8px;background:#fff;margin:0;box-shadow:none}
+.sentence-row select{max-width:170px!important;vertical-align:middle}
+.idea-content{gap:9px}
+.idea-help{font-size:13px;color:#647a6b}
+.idea-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:8px;font-size:17px;min-width:0}
+.idea-row select{width:100%;text-overflow:ellipsis}
+.picture-card{gap:6px}
+.picture-word-bank{display:flex;align-items:center;justify-content:center;gap:7px;min-height:40px;flex:none}
+#app .picture-word{font:700 17px/1.1 Arial,sans-serif;color:#294f41;background:#f8e4b0;border:1px solid #afbd91;border-radius:8px;padding:8px 15px;min-height:38px;min-width:67px;box-shadow:none;touch-action:none;user-select:none}
+#app .picture-word.selected{outline:3px solid #587a4c;outline-offset:1px}
+.picture-pairs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;min-height:0;flex:1}
+.picture-pair{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;min-height:0}
+.vocabulary-picture{width:100%;max-width:125px;flex:1;min-height:36px;overflow:hidden;border-radius:6px;display:block}
+.vocabulary-picture[data-object-index="0"]{background-position:0 0}
+.vocabulary-picture[data-object-index="1"]{background-position:100% 0}
+.vocabulary-picture[data-object-index="2"]{background-position:0 100%}
+.vocabulary-picture[data-object-index="3"]{background-position:100% 100%}
+#app .picture-pad{width:100%;min-height:44px;max-height:58px;min-width:0;flex:none;border:2px dashed #a3b38d;border-radius:9px;background:#f0f3e4;color:#71885b;font:700 14px/1.1 Arial,sans-serif;padding:5px 4px;box-shadow:none;touch-action:none;user-select:none}
+#app .picture-pad.filled{padding:4px;background:#eff4e4;border:2px solid #a3b38d}
+.placed-picture-word{display:flex;align-items:center;justify-content:center;background:#f8e4b0;border:1px solid #a7b587;border-radius:6px;min-height:31px;padding:4px;font-size:16px;color:#294f41}
+#app .picture-pad.picture-drop-ready{border-color:#3c805e;background:#def0cc;box-shadow:0 0 0 3px #a3cb70}
+.picture-help{font-size:10px;text-align:center;line-height:1.2;color:#748768;flex:none}
+.picture-drag-ghost{position:fixed;z-index:99999;pointer-events:none;border:2px solid #728f60;background:#f8e4b0;padding:12px 17px;border-radius:8px;color:#294f41;font:700 20px Arial;box-shadow:0 5px 15px #0003}
+.test-page-foot{display:flex;gap:10px;align-items:center;justify-content:space-between;flex:none;min-height:20px;font-size:12px;color:#506f52}
+#app .test-page-foot button{padding:8px 15px;min-height:38px;box-shadow:none;border-radius:9px;font-size:14px}
+#app .test-shell .bottom-bar{min-height:19px!important;padding:0!important;box-shadow:none;background:transparent!important;color:#657c65;flex:none;font-size:10px;display:flex;align-items:center;justify-content:space-between}
+#app .test-shell .bottom-bar.with-narration{min-height:42px!important;gap:8px;background:#f7f4df!important;border-radius:10px;padding:3px 7px!important}
+#app .test-shell .bottom-bar #pageTime{display:none}
+#app .test-shell .teacher-voice-entry{font:700 11px Arial;padding:7px;min-height:33px;background:#fafcf5;border:1px solid #b8cbb7;color:#4b6e59;border-radius:8px;box-shadow:none}
+.test-tools .teacher-voice-entry{margin-left:auto}
+.test-workspace[data-test-view="picture"]>.test-card{display:none}
+.test-workspace[data-test-view="picture"]>.full-story-picture{display:flex;grid-column:1/-1;grid-row:1/-1;align-items:center;gap:8px}
+.full-illustration{width:100%;height:calc(100% - 40px);min-height:0;object-fit:contain;border-radius:12px}
+.full-story-picture h2{font-size:20px}
+.test-workspace[data-compact="true"]{grid-template-columns:1fr!important;grid-template-rows:1fr!important}
+.test-workspace[data-compact="true"]>.test-card{display:none;grid-column:1;grid-row:1}
+.test-workspace[data-compact="true"][data-test-view="story"]>.reading-card,.test-workspace[data-compact="true"][data-test-view="sentences"]>.language-card,.test-workspace[data-compact="true"][data-test-view="matching"]>.picture-card,.test-workspace[data-compact="true"][data-test-view="picture"]>.full-story-picture{display:flex}
+.reading-card[data-read-columns="true"]{display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:25px}
+.reading-card[data-read-columns="true"]>.test-card-head{grid-column:1/-1;grid-row:1}
+.reading-card[data-read-columns="true"]>.independent-story{grid-column:1;grid-row:2}
+.reading-card[data-read-columns="true"]>.tick-questions{grid-column:2;grid-row:2;align-self:start}
+.reading-card[data-read-columns="true"]>.section-save{grid-column:2;grid-row:3;min-width:0}
+.reading-card[data-read-columns="true"] .tick-options{flex-direction:column}
+.reading-card[data-read-columns="true"] .question-illustration{width:155px;height:115px}
+.test-workspace[data-compact="true"] .language-card .sentence-grid{align-content:center;gap:24px;max-width:1000px;margin:auto;width:100%}
+.test-workspace[data-compact="true"] .language-card .language-content{justify-content:center}
+.test-workspace[data-compact="true"] .language-card .sentence-row{font-size:23px;line-height:1.5}
+.test-workspace[data-compact="true"] .language-card .sentence-word-bank{font-size:23px;padding:13px;flex:none}
+.test-workspace[data-compact="true"] .language-card .idea-row{font-size:23px;gap:16px;max-width:1000px;width:100%;margin:auto}
+#app .test-workspace[data-compact="true"] .language-card select{font-size:21px;min-height:45px}
+.test-workspace[data-compact="true"] .picture-card .picture-pairs{align-items:center}
+.test-workspace[data-compact="true"] .picture-card .picture-pair{width:100%;height:90%;max-height:330px}
+.test-workspace[data-compact="true"] .vocabulary-picture{max-width:230px;min-height:90px;aspect-ratio:1}
+#app .test-workspace[data-compact="true"] .picture-word{font-size:22px;min-height:46px;padding:10px 20px}
+#app .test-workspace[data-compact="true"] .picture-pad{min-height:56px}
+.test-workspace[data-compact="true"] .picture-help{font-size:13px}
+.read-subtools{display:flex;gap:6px;flex:none}
+.reading-card.read-with-switch[data-read-mode="text"]>.tick-questions,.reading-card.read-with-switch[data-read-mode="text"]>.section-save,.reading-card.read-with-switch[data-read-mode="questions"]>.independent-story{display:none}
+.reading-card.read-with-switch[data-read-mode="questions"]>.tick-questions{flex:1;justify-content:center;gap:20px}
+.reading-card.read-with-switch[data-read-mode="questions"] .question-illustration{width:170px;height:120px}
+.reading-card.read-with-switch .independent-story{flex:1;min-height:0}
+@media(max-height:780px){
+ #app .test-shell{padding:8px 12px!important;gap:5px!important}
+ .test-card{padding:11px 13px;border-radius:16px;gap:6px}
+ .test-card h1,.test-card h2{font-size:21px}
+ .independent-story{font-size:21px;line-height:1.32}
+ .grade-E .independent-story{font-size:28px}
+ .grade-F .independent-story,.grade-G .independent-story{font-size:23px}
+ .sentence-row{font-size:15px}.sentence-grid{gap:7px}
+ .sentence-word-bank{font-size:14px;padding:5px}
+ .tick-question legend{font-size:15px;margin-bottom:5px}
+ .tick-option{font-size:14px;padding:5px 7px}
+ .question-illustration{height:64px;width:90px}
+ .section-save{padding-top:6px;min-height:36px;gap:5px}
+ #app .section-save button{min-height:34px;font-size:12px;padding:8px 10px;min-width:92px}
+ .section-save>span:first-child{font-size:10px}
+ .section-lock{font-size:23px}
+ .picture-card h2{font-size:20px}.picture-directions{font-size:11px}
+ #app .picture-word{font-size:15px;padding:7px 12px;min-height:34px}
+ .picture-word-bank{min-height:34px}
+ .picture-pairs{gap:10px}
+ #app .picture-pad{min-height:40px;font-size:12px}
+ .placed-picture-word{min-height:27px;font-size:14px}
+ #app .test-shell select{font-size:14px;min-height:34px}
+ .language-illustration{width:54px;height:36px}
+ .test-workspace[data-compact="true"] .language-card .sentence-row{font-size:19px;line-height:1.4}
+ .test-workspace[data-compact="true"] .language-card .sentence-grid{gap:12px;align-content:start}
+ .test-workspace[data-compact="true"] .language-card .sentence-word-bank{font-size:19px;padding:8px}
+ .test-workspace[data-compact="true"] .language-card .idea-row{font-size:19px;margin:8px 0}
+ #app .test-workspace[data-compact="true"] .language-card select{font-size:18px;min-height:40px}
+}
+@media(max-width:1099px){
+ #app .test-shell .wordmark{font-size:25px;max-width:40%}
+ .tick-question legend{font-size:20px}
+ .tick-option{font-size:20px;min-height:49px}
+ .question-illustration{width:145px;height:100px}
+ .test-card{padding:16px 18px}
+ .independent-story{font-size:25px;line-height:1.4}
+ .grade-E .independent-story{font-size:34px}
+ .test-word-count{font-size:12px}
+ .test-card h1,.test-card h2{font-size:27px}
+ .section-save>span:first-child{font-size:12px}
+ .language-card{gap:13px}
+ .test-workspace[data-compact="true"] .picture-pairs{gap:18px}
+}
+@media(orientation:portrait){
+ #app .test-shell{padding:15px!important;gap:9px!important}
+ #app .test-shell .wordmark{max-width:43%;font-size:25px}
+ #app .test-shell .top-info{gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:55%}
+ #app .test-shell .badge{font-size:11px;padding:6px 7px}
+ .test-tools{gap:5px;flex-wrap:wrap}
+ .test-tools button{font-size:12px;padding:8px 10px}
+ .test-workspace[data-compact="true"] .language-card .sentence-grid{grid-template-columns:1fr;gap:22px}
+ .test-workspace[data-compact="true"] .language-card .sentence-row{font-size:26px}
+ .test-workspace[data-compact="true"] .picture-card .picture-pairs{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px 25px}
+ .test-workspace[data-compact="true"] .picture-card .picture-pair{height:100%;max-height:none}
+ .test-workspace[data-compact="true"] .vocabulary-picture{max-width:220px;min-height:70px}
+ .test-workspace[data-compact="true"] .picture-word-bank{min-height:52px;gap:8px}
+ .test-workspace[data-compact="true"] .picture-card{gap:10px}
+ .test-workspace[data-compact="true"] .language-card .idea-row{grid-template-columns:1fr;gap:10px;margin:20px 0;font-size:25px}
+ .tick-question-body{gap:15px}
+ .tick-options{flex-direction:column}
+ .tick-option{padding:10px 12px}
+ .test-card-head{gap:8px}
+ .independent-story{font-size:26px;line-height:1.4}
+ .reading-card.read-with-switch[data-read-mode="questions"]>.tick-questions{gap:32px}
+ .test-workspace[data-compact="true"] .language-illustration{width:130px;height:95px}
+ .sentence-row select{max-width:225px!important}
+}
+@media(prefers-reduced-motion:reduce){.spin-lock{animation:none}}
+@media print{#app .test-shell{width:270mm;height:190mm!important;padding:3mm!important}.test-tools,.test-page-foot,.bottom-bar{display:none!important}.test-workspace{display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:1fr 1fr!important}.test-workspace>.reading-card,.test-workspace>.language-card,.test-workspace>.picture-card{display:flex!important}.test-workspace>.full-story-picture{display:none!important}.test-card{padding:3mm}.independent-story{font-size:14px!important}.tick-question legend,.tick-option,.sentence-row{font-size:11px!important}.question-illustration{width:55px;height:40px}.section-save{min-height:20px}.section-save button{min-height:20px!important;padding:3px!important}.test-card h1,.test-card h2{font-size:16px}}
+
+/* The story is never replaced by an answer tool, at any viewport or text size. */
+#app .test-shell .test-workspace[data-layout]{grid-template-columns:minmax(0,.48fr) minmax(0,.52fr);grid-template-rows:minmax(0,1.12fr) minmax(0,.88fr);gap:10px}
+#app .test-shell .test-workspace[data-layout="all"]>.reading-card{display:flex;grid-column:1;grid-row:1/3}
+#app .test-shell .test-workspace[data-layout="all"]>.language-card{display:flex;grid-column:2;grid-row:1}
+#app .test-shell .test-workspace[data-layout="all"]>.picture-card{display:flex;grid-column:2;grid-row:2}
+#app .test-shell .test-workspace[data-layout="all"]>.full-story-picture{display:none}
+#app .test-shell .test-workspace[data-layout="beside"]{grid-template-columns:minmax(0,.64fr) minmax(0,.36fr);grid-template-rows:minmax(0,1fr)}
+#app .test-shell .test-workspace[data-layout="beside"]>.test-card{display:none;grid-column:2;grid-row:1;justify-content:flex-start}
+#app .test-shell .test-workspace[data-layout="beside"]>.reading-card{display:flex;grid-column:1;grid-row:1}
+#app .test-shell .test-workspace[data-layout="beside"][data-test-view="story"]>.comprehension-card,
+#app .test-shell .test-workspace[data-layout="beside"][data-test-view="sentences"]>.language-card,
+#app .test-shell .test-workspace[data-layout="beside"][data-test-view="matching"]>.picture-card,
+#app .test-shell .test-workspace[data-layout="beside"][data-test-view="picture"]>.full-story-picture{display:flex}
+#app .test-shell .reading-card>.independent-story{flex:0 1 auto;line-height:1.34}
+#app .test-shell .test-workspace[data-layout="beside"]>.reading-card .test-card-head p{display:none}
+#app .test-shell .reading-card>.independent-story p{margin-bottom:.42em}
+#app .test-shell .reading-card>.tick-questions{margin-top:7px}
+#app .test-shell .inline-story-picture{flex:1;min-height:0;max-height:420px;display:flex;justify-content:center;overflow:hidden;border-radius:10px}
+#app .test-shell .inline-illustration{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+#app .test-shell .tick-question[hidden],#app .test-shell .sentence-row[hidden]{display:none!important}
+#app .test-shell .tick-question legend{font-size:calc(17px * var(--activity-scale));line-height:1.24}
+#app .test-shell .tick-option{font-size:calc(17px * var(--activity-scale));min-height:38px;padding:6px 8px}
+#app .test-shell:is(.grade-E,.grade-F,.grade-G) .question-illustration{width:clamp(95px,10vw,145px);height:100px}
+#app .test-shell .comprehension-card>.tick-questions{flex:0 1 auto;gap:18px}
+#app .test-shell .comprehension-card>p{font-size:13px;color:#657b68}
+#app .test-shell .comprehension-card .tick-question-body{flex-direction:column}
+#app .test-shell .comprehension-card .question-illustration{width:100%;height:140px;object-fit:contain}
+#app .test-shell .comprehension-card .tick-options{flex-direction:column}
+#app .test-shell .test-card h2{font-size:22px}
+#app .test-shell .language-card{gap:8px}
+#app .test-shell .language-content{flex:1;min-height:0;justify-content:flex-start;gap:8px}
+#app .test-shell .language-fields{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:10px 14px}
+#app .test-shell .language-fields>.sentence-row{display:flex;align-items:start;gap:5px;min-width:0;font:calc(17px * var(--activity-scale))/1.35 Arial,sans-serif;margin:0}
+#app .test-shell .language-fields .sentence-number{padding-top:8px;font-size:12px;flex:none}
+#app .test-shell .language-fields select{font-size:calc(16px * var(--activity-scale));min-height:40px;max-width:100%!important;padding:6px 22px 6px 7px}
+#app .test-shell .language-fields>.sentence-row>span:last-child{min-width:0;max-width:100%;overflow-wrap:break-word}
+#app .test-shell .language-fields .idea-row select{width:auto;max-width:100%;text-overflow:ellipsis}
+#app .test-shell .sentence-word-bank{font-size:calc(16px * var(--activity-scale));padding:6px 8px}
+#app .test-shell .test-workspace[data-layout="beside"] .language-fields{grid-template-columns:1fr;gap:18px}
+#app .test-shell .test-workspace[data-layout="beside"] .language-fields>.sentence-row{font-size:calc(21px * var(--activity-scale));line-height:1.4}
+#app .test-shell .test-workspace[data-layout="beside"] .language-fields select{font-size:calc(20px * var(--activity-scale));min-height:44px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-word-bank{gap:6px;min-height:34px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-word{font-size:16px;min-width:55px;min-height:34px;padding:7px 11px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-pairs{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:9px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-pair{height:100%;max-height:none;min-height:0}
+#app .test-shell .test-workspace[data-layout="all"] .vocabulary-picture{min-height:38px;max-width:135px;aspect-ratio:auto}
+#app .test-shell .test-workspace[data-layout="all"] .picture-pad{min-height:42px;font-size:13px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-help{font-size:10px}
+#app .test-shell .test-workspace[data-layout="all"] .picture-help{display:none}
+@media(min-width:1101px){
+ #app .test-shell .test-workspace[data-layout="all"]>.picture-card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto minmax(0,1fr) auto;gap:5px}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-card>h2{grid-column:1;grid-row:1;font-size:20px;align-self:center}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-card>.picture-word-bank{grid-column:2;grid-row:1;min-height:34px}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-card>.picture-directions{grid-column:1/-1;grid-row:2}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-card>.picture-pairs{grid-column:1/-1;grid-row:3}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-card>.section-save{grid-column:1/-1;grid-row:4}
+}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-pairs{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-pair{min-height:0;height:100%}
+#app .test-shell .test-workspace[data-layout="beside"] .vocabulary-picture{max-width:200px;min-height:45px}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-word-bank{flex-wrap:wrap;gap:6px;min-height:40px}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-word{font-size:19px;min-height:42px;padding:8px 12px}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-pad{min-height:46px;font-size:14px}
+#app .test-shell .test-workspace[data-layout="beside"] .picture-help{font-size:11px}
+#app .test-shell .section-save{gap:5px;min-height:39px;padding-top:6px}
+#app .test-shell .section-save>span:first-child{font-size:10px}
+#app .test-shell .section-save button{font-size:13px;padding:8px 10px;min-height:36px;min-width:95px}
+#app .test-shell .section-lock{font-size:23px;width:34px}
+@media(max-width:1100px){
+ #app .test-shell .test-card{padding:12px;gap:7px}
+ #app .test-shell .test-card h1,#app .test-shell .test-card h2{font-size:21px}
+ #app .test-shell .language-fields{grid-template-columns:1fr;gap:9px}
+ #app .test-shell .language-fields>.sentence-row{font-size:17px}
+ #app .test-shell .test-word-count{font-size:10px;white-space:normal;flex:0 0 65px}
+ #app .test-shell .section-save>span:first-child{font-size:9px}
+ #app .test-shell .section-save button{font-size:12px;padding:8px;min-width:85px}
+ #app .test-shell .section-lock{width:29px}
+ #app .test-shell .tick-question-body{gap:7px}
+ #app .test-shell .test-workspace[data-layout="all"] .tick-question-body{flex-direction:column}
+ #app .test-shell .test-workspace[data-layout="all"] .question-illustration{height:85px;width:100%;object-fit:contain}
+ #app .test-shell .test-workspace[data-layout="all"] .tick-options{flex-direction:row;flex-wrap:wrap}
+ #app .test-shell .test-workspace[data-layout="all"] .tick-option{min-width:90px}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-word{font-size:14px;min-width:48px;padding:6px 8px}
+ #app .test-shell .test-workspace[data-layout="all"] .picture-word-bank{flex-wrap:wrap}
+}
+@media(orientation:portrait){
+ #app .test-shell .test-workspace[data-layout="beside"]{grid-template-columns:minmax(0,.52fr) minmax(0,.48fr)}
+}
+@media(max-height:700px){
+ #app .test-shell .test-card-head p{font-size:11px}
+ #app .test-shell .comprehension-card .question-illustration{height:90px}
+ #app .test-shell .test-workspace[data-layout="beside"] .language-fields>.sentence-row{font-size:19px}
+ #app .test-shell .test-workspace[data-layout="beside"] .language-fields select{font-size:18px}
+}
+
+/* Compact questions no longer occupy an otherwise empty full-height answer pane. */
+#app .test-shell .test-workspace[data-layout="stacked"]{grid-template-columns:minmax(0,.43fr) minmax(0,.57fr);grid-template-rows:auto auto minmax(0,1fr);gap:8px}
+#app .test-shell .test-workspace[data-layout="stacked"]>.reading-card{display:flex;grid-column:1;grid-row:1/4}
+#app .test-shell .test-workspace[data-layout="stacked"]>.comprehension-card{display:flex;grid-column:2;grid-row:1}
+#app .test-shell .test-workspace[data-layout="stacked"]>.language-card{display:flex;grid-column:2;grid-row:2}
+#app .test-shell .test-workspace[data-layout="stacked"]>.picture-card{display:grid;grid-column:2;grid-row:3}
+#app .test-shell .test-workspace[data-layout="stacked"]>.full-story-picture{display:none}
+#app .test-shell .test-workspace[data-layout="paired"]{grid-template-columns:minmax(0,.47fr) minmax(0,.53fr);grid-template-rows:auto minmax(0,1fr);gap:8px}
+#app .test-shell .test-workspace[data-layout="paired"]>.reading-card{display:flex;grid-column:1;grid-row:1/3}
+#app .test-shell .test-workspace[data-layout="paired"]>.test-card:not(.reading-card){display:none;grid-column:2}
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="story"]>.comprehension-card,
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="matching"]>.comprehension-card{display:flex;grid-row:1}
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="sentences"]>.language-card{display:flex;grid-row:1}
+#app .test-shell .test-workspace[data-layout="paired"]>.picture-card{display:grid;grid-row:2}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"])>.test-card:not(.reading-card){padding:9px 11px;gap:5px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"])>.comprehension-card>h2,
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"])>.comprehension-card>p{display:none}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card>.tick-questions{flex:none;gap:7px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .tick-question legend{font-size:17px;margin-bottom:4px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card .tick-question-body{flex-direction:row;gap:8px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card .question-illustration{width:100px;height:72px;object-fit:cover}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card .tick-options{flex-direction:row;flex-wrap:wrap;gap:5px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card .tick-option{font-size:16px;padding:5px 7px;min-height:35px;min-width:95px;flex:1}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .section-save{margin-top:4px;min-height:33px;padding-top:4px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .section-save>span:first-child{font-size:9px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .section-save button{min-height:32px;font-size:12px;padding:6px 9px;min-width:90px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .test-card-head p{display:none}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .test-card h2{font-size:19px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .language-content{flex:none;gap:5px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .language-fields{flex:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .language-fields>.sentence-row{font-size:16px;line-height:1.3}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .language-fields select{font-size:15px;min-height:36px;padding:5px 20px 5px 6px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .sentence-word-bank{font-size:15px;padding:4px 7px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"])>.picture-card{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto minmax(0,1fr) auto;gap:4px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-card>h2{grid-column:1;grid-row:1;font-size:18px;align-self:center}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-word-bank{grid-column:2;grid-row:1;min-height:32px;gap:5px;flex-wrap:wrap;max-width:330px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-word{font-size:15px;min-width:45px;min-height:32px;padding:6px 8px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-directions{grid-column:1/-1;grid-row:2;font-size:11px;line-height:1.2}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-pairs{grid-column:1/-1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:7px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-card>.section-save{grid-column:1/-1;grid-row:4}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-pair{height:100%;min-height:0}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .vocabulary-picture{min-height:38px;max-width:150px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-pad{font-size:12px;min-height:40px;padding:4px}
+#app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-help{display:none}
+@media(max-width:900px){
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-card{grid-template-columns:1fr;grid-template-rows:auto auto auto minmax(0,1fr) auto}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-card>h2{grid-column:1;grid-row:1}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-word-bank{grid-column:1;grid-row:2;max-width:none;justify-content:start}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-directions{grid-row:3}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-pairs{grid-row:4}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .picture-card>.section-save{grid-row:5}
+ #app .test-shell .test-workspace:is([data-layout="stacked"],[data-layout="paired"]) .comprehension-card .question-illustration{width:80px;height:60px}
+}
+#app .test-shell .picture-card[data-long-labels="true"] .picture-pad{min-height:48px}
+#app .test-shell .picture-card[data-long-labels="true"] .picture-pad.filled{padding:2px}
+#app .test-shell .picture-card[data-long-labels="true"] .placed-picture-word{padding:2px 4px;font-size:14px;line-height:1.1}
+#app .test-shell .test-workspace[data-layout="paired"]>.test-card.picture-card{display:grid}
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="sentences"]{grid-template-rows:minmax(0,1.1fr) minmax(0,.9fr)}
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="sentences"]>.test-card.picture-card{display:none}
+#app .test-shell .test-workspace[data-layout="paired"][data-test-view="sentences"]>.test-card.comprehension-card{display:flex;grid-row:2}
+
+.test-shell{--vocabulary-art:url("assets/illustrations/vocabulary-pixar.png")}

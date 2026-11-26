@@ -1,0 +1,28 @@
+/* Answer states show completion, never correctness. */
+#app .tick-option{background:#ffe0b2;border-color:#bd6b12;color:#493309}
+#app .tick-option input{background:#ffa936;border-color:#985009}
+#app .tick-question:has(input:checked) .tick-option:not(.chosen){background:#fff6e7;border-color:#cebc9d}
+#app .tick-option.chosen{background:#175e9e;border-color:#104c82;color:#fff;box-shadow:inset 0 0 0 1px #104c82}
+#app .tick-option.chosen input{background:#fff;border-color:#fff}
+#app .tick-option input:checked:after{color:#175e9e}
+#app .tick-option.chosen mark{color:#173e39}
+#app .test-shell select:has(option[value=""]:checked){background:#fff0a3;border:2px solid #bb870d;color:#3d3611}
+#app .test-shell select:has(option:checked:not([value=""])){background:#175e9e;border:2px solid #104c82;color:#fff;opacity:1;-webkit-text-fill-color:#fff}
+#app .test-shell select option{background:#fff;color:#173e39;-webkit-text-fill-color:#173e39}
+#app .sentence-row:has(select option[value=""]:checked),#app .idea-row:has(select option[value=""]:checked),#app .extra-item:has(select option[value=""]:checked){background:#fff0d9;border-radius:7px;box-shadow:inset 3px 0 #f59a23}
+#app .picture-pad:not(.filled),#app .bike-pad:not(.filled){background:#ffe0b2;border-color:#b46610;color:#633e0e}
+#app .picture-pad.filled,#app .picture-pad .placed-picture-word,#app .bike-pad.filled,#app .bike-pad.filled .bike-choice{background:#175e9e;border-color:#104c82;color:#fff}
+#app .section-save button:not(:disabled){background:#e97912;border-color:#9f4804;color:#fff}
+.page-help-row:not(.is-finished){background:#fff0d9;border-color:#e99127}
+.test-word-count{font-size:12px;font-weight:700;background:#eef3df;border-radius:7px;padding:5px 8px;color:#234d45;line-height:1.35}
+.test-word-count strong{display:block;font-size:14px}
+#app .test-shell .reading-card>.independent-story{flex-shrink:0}
+#app .teacher-audit-button{font:700 12px Andika,sans-serif;min-height:32px;padding:5px 9px;background:#fff0d9;color:#61400b;border:1px solid #c47a19;border-radius:8px;box-shadow:none;white-space:nowrap}
+.audit-toolbar{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}
+#app .audit-toolbar select{max-width:135px;min-height:30px;font-size:12px;padding:3px;border:1px solid #a16a15;background:#fff1ba;color:#493309}
+#app .audit-toolbar button{min-height:30px;padding:4px 7px;font-size:12px}
+body.teacher-auditing #app .section-save>span:first-child{font-weight:700;color:#85510b}
+.audit-dialog{border:2px solid #b77516;border-radius:18px;background:#fffefa;color:#214c41;font-family:Andika,sans-serif;padding:22px;max-width:min(480px,90vw)}
+.audit-dialog::backdrop{background:#153e3877}.audit-dialog h2{margin:0 0 10px}.audit-dialog p{line-height:1.5}.audit-dialog label{display:flex;gap:12px;align-items:center}.audit-dialog input{font:20px Andika;width:100px;padding:8px;border:2px solid #b77516;border-radius:8px;background:#fff0a3}.audit-dialog form>div{display:flex;justify-content:space-between;gap:10px;margin-top:15px}.audit-dialog button{font:700 15px Andika;padding:9px 14px;border:1px solid #315d4d;border-radius:8px;background:#214c41;color:white}.audit-dialog [role=status]{min-height:24px;color:#8f3913}
+@media(max-width:900px){.audit-toolbar{gap:3px}#app .audit-toolbar select{max-width:94px}body.teacher-auditing .id-badge{display:none}}
+@media(min-width:1100px) and (max-height:650px){#app .test-shell .test-workspace[data-layout="beside"] .picture-pairs{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr)}#app .test-shell .test-workspace[data-layout="beside"] .vocabulary-picture{min-height:30px}}

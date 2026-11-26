@@ -1,0 +1,34 @@
+Obstacle Course - Teacher guide
+
+Start at the main index.html to choose a story, reading level and picture ID. E, F, G, L, M, N and R have four reading pages; P has ten. M/N/P stories have approximately half their earlier text. These are instructional targets for teacher review.
+
+Assessment documents are PDFs only. assessment-pdfs/obstacle-course/index.html opens the teacher PDF book: all eight levels, all story text, every question, every choice, picture questions, diagram labels and every correct answer. PDF bookmarks open each level.
+
+After a student finishes, enter teacher code 259 and choose Download detailed PDF. The student PDF includes all story text, every question, student responses, correct answers and marks. The detailed PDF downloads directly.
+
+Voice starts off. Teacher override 259 enables directions only. Story text and choices stay silent. Each section has Save & lock. Incorrect but completed responses can be saved. More opens every numbered activity set. What’s left? identifies missing work. Mouse, touch, keyboard and tap placement are supported. The complete story stays visible with the answer area. Save & exit returns to the menu; Continue reading reopens the saved assessment.
+
+Teacher audit: press Teacher audit and enter 259 to review every page without answers or Save & lock. Use the audit page selector or Next; the final diagram is included. Audit changes are unsaved and do not affect student attempts. Exit audit returns to student work.
+
+The main index.html is the single student landing page. Choose story, level and picture ID there. Word counts are shown on every story card for the selected level and on reading pages. Obstacle Course includes a 50-frame GIF per level, opened with Watch the course.
+
+November 26 activities: every reading page includes Why dropdowns; page 1 asks who, what, where and why. Each section has its own Save & lock, with a green completion check beneath its tab title. What’s left? opens a notebook checklist and goes directly to missing work. Picture matching builds each word from two movable parts on the picture pad, such as fl + ag. E, F and G include the opening listening and eight-word spelling activities. Their explicit headphone buttons play their own recordings without an override; all story text and answer choices stay silent. Letters and word parts support dragging, tapping and keyboard placement and remain saved across tabs and Save & exit. Level N uses simpler vocabulary.
+
+Student assessment output: enter teacher code 259 after completion and choose Download detailed PDF. This downloads a searchable .pdf directly, including the full story, every question and choice, correct answers, student answers, letter/word-part placements and marks. No print dialog is needed. The offline PDF library, fonts and illustration packets are included.
+
+Updated opening for E, F and G, in all four stories:
+1. Meet the characters: tap a drawn portrait to hear the name printed beside it. Name listening is optional and is recorded separately from marks.
+2. Listening: Words (ten words, three full plays each, pictures revealed after the third full play), Sentences (ten short sentences, one full play each), and Listen & fill (the same sentence recordings, ten draggable words and ten gaps; each sentence must be heard once and its gap filled). Each listening screen has its own Save & lock. Taps and full plays are recorded separately. Interrupted playback earns no full listen.
+3. Picture sentences: seven newly drawn story scenes, each with a three-option description dropdown. On smaller screens use the numbered picture sets; the complete story stays beside the answer area.
+4. Spelling: eight pictured words, two extra letters per word, headphones for the target word, and movable letters. Word buttons 1–8 and Back/Next word reach every word. The four original spelling targets are retained and four related words are added. Incorrect but filled responses can be saved.
+The original reading questions, sentence dropdowns, two-part picture words, picture descriptions, Why questions and final diagram follow. No original reading activities were removed. Later reading pages keep their original activity sequence.
+
+All introductory word, name, sentence and spelling recordings are bundled WAV files and work offline. Only these explicitly requested recordings can play on their own activity screens. Reading-test directions still require teacher code 259; independent story text and answer choices remain silent. All audio stops when a screen changes.
+
+The detailed PDF includes the character introduction, each glossary word with tap/full-play counts, every full listening sentence, each listening gap, all seven picture questions, all eight spelling words and placements, and the original complete story and assessment. Every assessed item includes the student response, correct answer and mark. Existing closed records keep their administered content; open first pages gain the new introductory sections without losing saved responses.
+
+Artwork prompt sets: Glossary-Artwork-Prompts.json and Intro-Artwork-Prompts.json. All corresponding PNG atlases and 134 offline audio clips are included.
+
+November 26 visual repairs, all four projects: picture-sentence and description sets use the whole answer area, with larger pictures and a full-width final single card. Hidden rows do not occupy space. Word-building images and landing pads stay in separate rows; every set remains reachable. Illustrated reading questions and spelling pictures expand to available space. Short spelling screens place the picture beside the letters; glossary media uses a definite grid track and stays visible. These rules apply in student and teacher audit modes, with the complete reading page still visible beside answer activities.
+
+The final diagrams now use newly generated Pixar-style PNG illustrations, with the existing six, seven or eight draggable labels and updated pointers. The illustrations are included in teacher books and direct student PDF downloads. Assets: each story assets/illustrations/diagram-pixar-v1.png. Generation method: built-in image generation. Prompt set and pointer coordinates: Diagram-Artwork-Prompts.json.

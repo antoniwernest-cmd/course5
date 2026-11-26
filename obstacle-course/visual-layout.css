@@ -1,0 +1,67 @@
+/* Final media layout rules, shared by all stories, levels and audit views. */
+#app .test-shell .picture-pair[hidden],#app .test-shell .extra-item[hidden]{display:none!important}
+#app .test-shell .picture-card.phonics-picture-card{display:flex;flex-direction:column;gap:7px}
+#app .test-shell .picture-card.phonics-picture-card>.picture-word-bank{flex:none;justify-content:center;max-width:none}
+#app .test-shell .picture-card.phonics-picture-card .word-part{font-size:18px;min-width:32px;min-height:36px;padding:5px 7px}
+#app .test-shell .picture-card.phonics-picture-card.media-tight .picture-word-bank{gap:4px}
+#app .test-shell .picture-card.phonics-picture-card.media-tight .word-part{font-size:16px;padding:4px 5px;min-height:34px}
+#app .test-shell .test-card-head .test-word-count{flex:0 0 100px;min-width:100px;white-space:nowrap;font-size:10px;line-height:1.4;padding:5px}
+#app .test-shell .picture-card.phonics-picture-card>.picture-pairs{display:grid;flex:1;min-height:0;gap:10px;align-items:stretch}
+#app .test-shell .picture-card.phonics-picture-card .picture-pair{display:flex;flex-direction:column;gap:6px;width:100%;height:100%;max-height:none;min-height:0;overflow:hidden}
+#app .test-shell .picture-card.phonics-picture-card .picture-pair>.vocabulary-picture{flex:1;min-height:0!important;width:100%;height:100%;max-height:none!important;max-width:none!important;aspect-ratio:auto}
+#app .test-shell .picture-card.phonics-picture-card .joined-word-pad{width:100%;flex:none;min-height:48px;max-height:58px}
+#app .test-shell .picture-card.phonics-picture-card .picture-help{flex:none;margin:0;font-size:11px}
+#app .test-shell .picture-card.phonics-picture-card>.section-save{flex:none;margin-top:0;width:100%}
+#app .test-shell .picture-descriptions .extra-task-grid{min-height:0;align-content:stretch;grid-auto-rows:minmax(0,1fr)}
+#app .test-shell .picture-descriptions .extra-task-grid>.extra-item{min-height:0!important;height:100%;gap:5px;padding:7px}
+#app .test-shell .picture-descriptions .extra-task-grid>.extra-item>.vocabulary-picture{display:block;flex:1;min-height:0!important;max-height:none!important;max-width:none!important;width:100%;height:100%;aspect-ratio:auto}
+#app .test-shell .picture-descriptions .extra-task-grid select{min-height:40px;flex:none;font-size:15px}
+#app .test-shell .picture-descriptions .chosen-description{font-size:14px;line-height:1.25;flex:none}
+#app .test-shell .activity-item-pager{flex:none;min-height:32px;margin:0;gap:5px}
+#app .test-shell .activity-item-pager small{display:none}
+#app .test-shell .activity-item-pager button{min-height:32px;padding:5px 10px}
+/* A definite media track avoids percentage/size-containment collapse in native buttons. */
+#app .test-shell button.glossary-word.cvc-word-card{grid-template-rows:minmax(0,1fr) auto auto;height:100%;align-content:stretch}
+#app .test-shell .cvc-word-media{container-type:normal;align-self:stretch;height:auto;min-height:0;overflow:hidden}
+#app .test-shell .cvc-word-media .vocabulary-picture{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none}
+#app .test-shell .cvc-covered{position:absolute;inset:0;width:100%;height:100%;gap:3px}
+#app .test-shell .cvc-covered strong{font-size:clamp(26px,4vh,50px);line-height:1}
+#app .test-shell .cvc-covered small{font-size:12px;line-height:1.15}
+#app .test-shell .cvc-word-media .cvc-headphones{font-size:25px!important;line-height:1;top:6px;right:7px}
+#app .test-shell .cvc-word-media .cvc-headphones{display:grid;place-items:center;width:1.4em;height:1.4em;line-height:1.4}
+/* Let the picture take every remaining pixel between navigation and letter pads. */
+#app .test-shell .spelling-card .spelling-picture-row{flex:1;min-height:0;max-height:none;gap:10px;position:relative}
+#app .test-shell .spelling-card .spelling-picture-row>.vocabulary-picture{flex:1;min-height:0;max-width:none!important;max-height:none!important;width:100%;height:100%;aspect-ratio:auto}
+#app .test-shell .spelling-card .hear-spelling{min-width:76px;min-height:76px;font-size:34px}
+#app .test-shell .spelling-card .spelling-slots,#app .test-shell .spelling-card .spelling-letter-bank{flex:none}
+/* A single illustrated question uses the available answer area, with choices below. */
+#app .test-shell .test-workspace[data-layout="beside"] .illustrated-questions>.tick-questions{flex:1;min-height:0;gap:9px}
+#app .test-shell .illustrated-questions .tick-question{display:flex;flex-direction:column;flex:1;min-height:0}
+#app .test-shell .illustrated-questions .tick-question legend{flex:none;width:100%;padding:0 0 6px;font-size:18px}
+#app .test-shell .test-workspace[data-layout="beside"] .illustrated-questions .tick-question-body{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
+#app .test-shell .test-workspace[data-layout="beside"] .illustrated-questions .question-illustration{display:block;flex:1;width:100%;height:100%;min-height:80px;max-height:none;object-fit:contain}
+#app .test-shell .illustrated-questions .tick-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));flex:none;gap:7px}
+#app .test-shell .illustrated-questions .tick-option{font-size:17px;min-width:0;min-height:44px}
+#app .test-shell .illustrated-questions>.section-save{margin-top:0;flex:none}
+@media(orientation:portrait){#app .test-shell button.glossary-word.cvc-word-card{grid-template-rows:minmax(0,1fr) auto}#app .test-shell .cvc-covered strong{font-size:34px}#app .test-shell .illustrated-questions .tick-options{grid-template-columns:1fr}}
+@media(max-height:650px){#app .test-shell .cvc-covered strong{font-size:26px}#app .test-shell .cvc-covered small{font-size:10px}#app .test-shell .cvc-word-media .cvc-headphones{font-size:20px!important;top:3px}#app .test-shell .spelling-card .hear-spelling{min-width:60px;min-height:60px;font-size:27px}#app .test-shell .picture-descriptions .extra-task-grid select{font-size:13px;min-height:35px}}
+#app .test-shell .spelling-card.spelling-short.spelling-wide{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto minmax(0,1fr) minmax(0,1fr) auto auto;gap:5px 12px}
+#app .test-shell .spelling-short.spelling-wide>.extra-heading{grid-column:1/-1;grid-row:1}
+#app .test-shell .spelling-short.spelling-wide>.spelling-word-nav{grid-column:1/-1;grid-row:2}
+#app .test-shell .spelling-short.spelling-wide>.spelling-word-pager{grid-column:1/-1;grid-row:3}
+#app .test-shell .spelling-short.spelling-wide>.spelling-picture-row{grid-column:1;grid-row:4/7;position:relative;padding-bottom:35px}
+#app .test-shell .spelling-short.spelling-wide .hear-spelling{position:absolute;bottom:0;right:0;flex-direction:row;min-height:32px!important;min-width:0!important;padding:3px 7px;font-size:22px!important;gap:5px}
+#app .test-shell .spelling-short.spelling-wide>.spelling-slots{grid-column:2;grid-row:4;align-self:end}
+#app .test-shell .spelling-short.spelling-wide>.spelling-letter-bank{grid-column:2;grid-row:5;align-self:start}
+#app .test-shell .spelling-short.spelling-wide>.spelling-tip{grid-column:2;grid-row:6;align-self:end}
+#app .test-shell .spelling-short.spelling-wide>.section-save{grid-column:1/-1;grid-row:7}
+@media(orientation:landscape) and (max-height:720px){
+ #app .test-shell button.glossary-word.cvc-word-card{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;padding:5px;gap:3px}
+ #app .test-shell .cvc-word-media{grid-column:1;grid-row:1/3}
+ #app .test-shell .cvc-word-label{grid-column:2;grid-row:1;align-self:end;font-size:19px;overflow-wrap:normal}
+ #app .test-shell .cvc-tap-count{grid-column:2;grid-row:2;align-self:start;font-size:10px;line-height:1.2;text-align:center}
+ #app .test-shell .cvc-covered{gap:0}
+ #app .test-shell .cvc-covered strong{font-size:28px}
+ #app .test-shell .cvc-covered small{font-size:9px;line-height:1.1}
+ #app .test-shell .cvc-word-media .cvc-headphones{font-size:19px!important;top:4px;right:4px}
+}

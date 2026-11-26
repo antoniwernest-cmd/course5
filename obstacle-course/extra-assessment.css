@@ -1,0 +1,43 @@
+@font-face{font-family:Andika;src:url('../assets/fonts/Andika-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Andika;src:url('../assets/fonts/Andika-Bold.ttf') format('truetype');font-weight:700 900;font-display:swap}
+html body,#app,#app h1,#app h2,#app h3,#app p,#app span,#app label,#app button,#app input,#app select,#app legend,#app fieldset,#parentPrintReport.native-reading-report,#parentPrintReport.native-reading-report *{font-family:Andika,'Comic Sans MS',sans-serif!important}
+#app *{font-family:Andika,'Comic Sans MS',sans-serif!important}
+#app svg text{font-family:Andika,'Comic Sans MS',sans-serif!important}
+#app .test-shell .test-card-head h1,#app .test-shell .test-card-head h2,#app .test-shell .picture-card>h2{line-height:1.35!important}
+#app .test-shell .test-card-head{flex-shrink:0}
+#app .test-shell .independent-story p:last-child{margin-bottom:0!important}
+#app .test-shell .test-tools button,#app .test-shell select,#app .test-shell .picture-word,#app .test-shell .picture-pad,#app .test-shell .section-save button{line-height:1.35!important}
+.reading-blend{background:#e3f0e5!important;color:inherit!important;padding:0!important;border-radius:3px;box-shadow:none!important}
+.reading-ch{background:#eee5f6!important;color:inherit!important;padding:0!important;border-radius:3px;box-shadow:none!important}
+.reading-bold{font-weight:700!important}
+#app .test-shell .test-tools{flex-wrap:wrap;gap:5px}
+#app .test-shell .test-tools button{font-size:12px;padding:6px 10px;min-height:33px}
+#app .test-shell .test-workspace[data-layout="beside"]>.extra-activity{display:flex;grid-column:2;grid-row:1;gap:8px;padding:13px}
+#app .test-shell .extra-heading{flex:none}
+#app .test-shell .extra-heading h2{font-size:22px;line-height:1.2}
+#app .test-shell .extra-heading p{font-size:13px;color:#627966;line-height:1.3;margin:4px 0 0}
+#app .test-shell .extra-task-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start;overflow:visible}
+#app .test-shell .extra-item{min-width:0;min-height:0;display:flex;flex-direction:column;align-items:stretch;gap:6px;border:1px solid #dce5d1;border-radius:12px;background:#fffef8;padding:10px;color:#244d42;font-size:16px;line-height:1.35}
+#app .test-shell .extra-item[hidden]{display:none!important}
+#app .test-shell .extra-item-number{font-size:12px;color:#71856a;flex:none}
+#app .test-shell .extra-prompt{font-size:17px;line-height:1.35}
+#app .test-shell .extra-item select{width:100%;min-height:43px;max-width:100%;font-size:16px;flex:none}
+#app .test-shell .chosen-description{font-size:15px;line-height:1.3;color:#244d42}
+#app .test-shell .picture-descriptions .extra-task-grid{grid-template-rows:repeat(2,minmax(0,1fr));align-content:stretch}
+#app .test-shell .picture-descriptions .extra-item{padding:8px;gap:5px}
+#app .test-shell .picture-descriptions .vocabulary-picture{width:100%;max-width:none;flex:1;min-height:60px;max-height:200px}
+#app .test-shell .six-rocks .extra-task-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#app .test-shell .six-rocks .vocabulary-picture{max-height:170px}
+#app .test-shell .six-rocks .chosen-description{font-size:14px}
+#app .test-shell .short-picture-grid .extra-item{padding:5px;gap:3px}
+#app .test-shell .short-picture-grid .vocabulary-picture{min-height:48px;max-height:110px}
+#app .test-shell .short-picture-grid .extra-item select{min-height:37px;font-size:14px;padding:5px 18px 5px 5px}
+#app .test-shell .short-picture-grid .chosen-description{font-size:13px;line-height:1.2}
+#app .test-shell .extra-activity .section-save{flex:none;margin-top:0}
+#app .test-shell .full-story-picture .full-illustration{flex:1;height:auto;min-height:0;width:100%;object-fit:contain}
+#app .test-shell .full-story-picture>.section-save{width:100%;margin-top:0}
+#app .test-shell .comprehension-card>p{display:none}
+#app .test-shell .comprehension-card>h2{font-size:18px!important;line-height:1.25!important}
+@media(max-height:720px){#app .test-shell .extra-heading h2{font-size:20px}#app .test-shell .extra-heading p{font-size:11px}#app .test-shell .extra-task-grid{gap:7px}#app .test-shell .extra-item{padding:7px}#app .test-shell .extra-prompt{font-size:16px}}
+@media(min-width:1100px) and (max-height:720px){#app .test-shell .picture-descriptions:not(.six-rocks) .extra-task-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr)}#app .test-shell .short-picture-grid:not(.six-rocks) .vocabulary-picture{max-height:130px}}
+@media(max-width:900px){#app .test-shell .extra-activity{padding:9px}#app .test-shell .extra-heading h2{font-size:19px}#app .test-shell .extra-item select{font-size:14px}#app .test-shell .chosen-description{font-size:14px}}

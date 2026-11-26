@@ -1,0 +1,186 @@
+/* Keep both counts visible without taking a second row on small screens. */
+@media screen{
+ .camp-shell:has(>.activity-progress){grid-template-rows:auto auto auto minmax(0,1fr) auto}
+ .camp-shell.bike-shell:has(>.activity-progress){grid-template-rows:auto auto minmax(0,1fr) auto}
+}
+.activity-progress{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(12px,2vw,28px);flex:none;padding:1px 2px 2px}
+.activity-progress-caption{display:flex;align-items:baseline;justify-content:space-between;gap:4px;color:#f4fcff;font:12px/1.25 Arial,sans-serif;margin-bottom:4px;white-space:nowrap}
+.activity-progress-caption strong{font-weight:700}.activity-progress-caption span{color:#e1f2f2;font-variant-numeric:tabular-nums}
+.activity-progress-track{height:18px;border-radius:12px;background:#ffffff30;overflow:hidden;box-shadow:inset 0 1px 3px #00131d70}
+.activity-progress-track i{display:block;height:100%;background:#ffdc36;border-radius:inherit;transition:width .18s ease-out}
+.activity-progress-meter:last-child .activity-progress-track i{background:#88f553}
+html[data-story-theme=ocean] .activity-progress-meter:last-child .activity-progress-track i{background:#39e9ff}
+
+/* A raised face and a solid edge make the reading controls easy to find. */
+:root{--step-face:#2f664c;--step-light:#4a8267;--step-edge:#163d2c;--step-back:#eef8ef;--step-back-edge:#71917e;--step-ink:#16452e}
+html[data-story-theme=ocean]{--step-face:#087fa1;--step-light:#2199b5;--step-edge:#07536e;--step-back:#e6f7fd;--step-back-edge:#609bad;--step-ink:#124f67}
+.cloze-part-tools:has([data-cloze-part]),.reference-parts{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:9px;margin-bottom:5px}
+.cloze-part-tools:has([data-cloze-part])>span,.reference-parts>span{text-align:center;line-height:1.2}
+button.page-step,.camp-shell .assess-foot #nextBtn,.camp-shell .bike-bank #finishBike,#lockDialog #confirmNext,#storyReferenceDialog #closeStoryReference{
+ min-height:44px;min-width:88px;border:1px solid var(--step-edge);border-radius:10px;padding:7px 12px;
+ color:white;background:linear-gradient(var(--step-light),var(--step-face));font:700 15px/1.12 Arial,sans-serif;white-space:nowrap;
+ box-shadow:0 4px 0 var(--step-edge),0 6px 8px #102c3b35,inset 0 1px 0 #ffffff40;transition:transform .1s,box-shadow .1s,filter .1s;
+}
+button.page-step[data-cloze-part='-1'],button.page-step[data-reference-part='-1'],#storyReferenceDialog #closeStoryReference{
+ background:linear-gradient(#fff,var(--step-back));color:var(--step-ink);border-color:var(--step-back-edge);box-shadow:0 4px 0 var(--step-back-edge),0 6px 8px #102c3b30;
+}
+button.page-step:not(:disabled):hover,.camp-shell .assess-foot #nextBtn:hover,.camp-shell .bike-bank #finishBike:hover,#lockDialog #confirmNext:hover,#storyReferenceDialog #closeStoryReference:hover{filter:brightness(1.08)}
+button.page-step:not(:disabled):active,.camp-shell .assess-foot #nextBtn:active,.camp-shell .bike-bank #finishBike:active,#lockDialog #confirmNext:active,#storyReferenceDialog #closeStoryReference:active{transform:translateY(3px);box-shadow:0 1px 0 var(--step-edge)}
+button.page-step:focus-visible,.camp-shell #nextBtn:focus-visible,.camp-shell #finishBike:focus-visible,#lockDialog #confirmNext:focus-visible,#storyReferenceDialog #closeStoryReference:focus-visible{outline:3px solid #efad32;outline-offset:3px}
+button.page-step:disabled{opacity:1;color:#52626a;background:#e8eef1;border-color:#a5b4bb;box-shadow:0 2px 0 #a5b4bb;cursor:default}
+.camp-shell .assess-foot #nextBtn,.camp-shell .bike-bank #finishBike,#lockDialog #confirmNext{white-space:normal}
+.camp-shell #clozePanel>.cloze-bank{flex-shrink:0}
+/* In short windows the notebook gets the full width; the story stays available in its tab. */
+@media screen and (max-height:670px){
+ .activity-progress-track{height:16px}
+ .camp-shell .workspace[data-view=questions]{grid-template-columns:minmax(0,1fr)}
+ .camp-shell .workspace[data-view=questions] .question-reference{display:none!important}
+ .camp-shell .workspace[data-view=questions] .reference-open{display:block!important}
+ .camp-shell .reading-question.reading-match.single-pair{display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-rows:auto auto auto;align-content:start;align-items:start;gap:8px 14px!important}
+ .camp-shell .reading-match.single-pair>h3,.camp-shell .reading-match.single-pair>.reading-match-switch{grid-column:1/-1}
+ .camp-shell .reading-match.single-pair>.reading-match-rows{grid-column:1;grid-row:3;min-width:0}
+ .camp-shell .reading-match.single-pair>.reading-bank{grid-column:2;grid-row:3;min-width:0}
+}
+@media(max-width:550px){.activity-progress{gap:10px}.activity-progress-caption{font-size:11px}.cloze-part-tools:has([data-cloze-part]),.reference-parts{gap:6px}button.page-step{min-width:78px;padding-inline:8px}.camp-shell .assess-foot #nextBtn{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.activity-progress-track i,button.page-step{transition:none}}
+@media print{.activity-progress,button.page-step{display:none!important}}
+
+.project-brand{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.mystica-return{color:inherit;font-size:12px;letter-spacing:0;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+.mystica-return:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+.camp-landing .level-choices { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.camp-landing .level-choice { min-width: 0; }
+.camp-shell.grade-F .reference-reading { font-size: calc(27px * var(--activity-scale)) !important; }
+@media (max-width: 600px) {
+ .camp-landing .level-choices { gap: 5px; }
+ .camp-landing .level-choice { padding-inline: 3px; }
+ .camp-landing .level-choice b { font-size: clamp(10px, 3.45vw, 16px); white-space: nowrap; }
+ .camp-landing .level-choice span { overflow-wrap: anywhere; }
+}
+
+.camp-shell .view-tabs button[data-view] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 4px 9px;
+  gap: 9px;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 800;
+  background: var(--view-color);
+  border: 1px solid var(--view-edge);
+  box-shadow: inset 0 -2px 0 #0003;
+}
+.camp-shell .view-tabs [data-view="picture"] {
+  --view-color: #126383; --view-edge: #64d7ec; --view-light: #b4f3ff; --view-ink: #123e55;
+}
+.camp-shell .view-tabs [data-view="story"] {
+  --view-color: #613fa0; --view-edge: #c7a4ff; --view-light: #ead8ff; --view-ink: #38215f;
+}
+.camp-shell .view-tabs [data-view="questions"] {
+  --view-color: #a54367; --view-edge: #ff9cc2; --view-light: #ffd6e1; --view-ink: #64243c;
+}
+.camp-shell .view-tabs button[data-view].active {
+  background: var(--view-light);
+  color: var(--view-ink);
+  box-shadow: inset 0 -3px 0 var(--view-edge);
+}
+.camp-shell .view-tabs button[data-view]:hover { filter: brightness(1.1); }
+.camp-shell .view-tabs button[data-view]:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.view-tab-icon { width: 36px; height: 36px; flex: none; object-fit: contain; pointer-events: none; }
+@media (max-width: 600px) {
+  .camp-shell .view-tabs button[data-view] { min-height: 44px; gap: 4px; padding-inline: 3px; font-size: clamp(10px, 2.9vw, 14px); }
+  .view-tab-icon { width: 27px; height: 27px; }
+}
+@media (max-width: 360px) {
+  .camp-shell .view-tabs button[data-view] { gap: 3px; padding-inline: 2px; }
+  .view-tab-icon { width: 21px; height: 21px; }
+}
+
+.camp-shell .reading-question-tabs button[data-reading-view] {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 0;
+ gap: 6px;
+ padding-block: 5px;
+ white-space: nowrap;
+}
+.notebook-art {
+ width: 29px;
+ height: 29px;
+ flex: none;
+ object-fit: contain;
+ pointer-events: none;
+}
+.reading-pad-prompt {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 7px;
+ min-width: 0;
+}
+.reading-match-row .reading-pad-prompt .notebook-art { width: 25px; height: 25px; }
+@media (max-width: 600px) {
+ .camp-shell .reading-question-tabs button[data-reading-view] { gap: 3px; padding-inline: 3px; font-size: clamp(10px, 2.85vw, 13px); }
+ .notebook-art { width: 22px; height: 22px; }
+ .reading-pad-prompt { gap: 4px; }
+ .reading-match-row .reading-pad-prompt .notebook-art { width: 21px; height: 21px; }
+ .camp-shell .reading-pad:not(.filled) { padding-inline: 8px !important; }
+}
+
+.activity-progress-rail {
+ position: relative;
+ --vehicle-width: 34px;
+ --vehicle-height: 24px;
+}
+.activity-progress-track i { width: var(--progress); }
+.activity-progress-vehicle {
+ position: absolute;
+ top: 50%;
+ left: calc((100% - var(--vehicle-width)) * var(--vehicle-position));
+ transform: translateY(-50%);
+ width: var(--vehicle-width);
+ height: var(--vehicle-height);
+ object-fit: contain;
+ pointer-events: none;
+ filter: drop-shadow(0 1px 1px #0008);
+}
+.activity-progress-rail.moving .activity-progress-track i { animation: fill-progress .36s ease-out; }
+.activity-progress-rail.moving .activity-progress-vehicle { animation: drive-progress .36s ease-out; }
+@keyframes fill-progress { from { width: var(--previous-progress); } }
+@keyframes drive-progress {
+ from { left: calc((100% - var(--vehicle-width)) * var(--previous-vehicle-position)); }
+}
+@media (max-width: 600px) {
+ .activity-progress-rail { --vehicle-width: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .activity-progress-rail.moving .activity-progress-track i,
+ .activity-progress-rail.moving .activity-progress-vehicle { animation: none; }
+}
+@media print { .notebook-art { width: 15px; height: 15px; } }
+
+@media screen and (max-width: 450px) {
+ .camp-shell .reading-match .reading-bank { gap: 6px; padding-inline: 0; }
+ .camp-shell .reading-match .reading-choice { padding: 6px 5px !important; }
+ .camp-shell .reading-match .reading-choice::before { font-size: 14px; margin-right: 3px; }
+}
+
+/* Content-sized answer tiles and landing pads. */
+.camp-shell .reading-bank{display:flex!important;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:9px}
+.camp-shell .reading-choice{width:max-content!important;max-width:100%;min-width:44px;flex:0 1 auto;min-height:44px!important;padding:9px 14px!important;white-space:normal;text-align:center}
+.camp-shell .reading-pad{width:max-content!important;max-width:100%;min-width:160px;align-self:flex-start;justify-self:start;display:inline-flex;align-items:center;justify-content:center;padding:10px 16px!important}
+.camp-shell .reading-pad.filled{min-width:44px}
+.camp-shell .reading-match-row .reading-pad{min-width:0;max-width:100%}
+.ready-save{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none;max-width:100%}
+.ready-save:has(>button[hidden]){display:none!important}
+.ready-lock{display:inline-block;flex:none;font-size:27px;line-height:1;width:30px;text-align:center;pointer-events:none;animation:ready-save-spin 2s linear infinite}
+@keyframes ready-save-spin{to{transform:rotateY(360deg)}}
+@media(prefers-reduced-motion:reduce){.ready-lock{animation:none}}
+@media print{.ready-lock{display:none}.camp-shell .reading-choice,.camp-shell .reading-pad{min-height:24px!important;padding:4px!important}}
+
+.camp-shell .reading-choice>span:last-child{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
